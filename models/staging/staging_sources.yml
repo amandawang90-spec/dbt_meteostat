@@ -4,7 +4,7 @@ sources:
   - name: weather_data
     schema: s_jingwang
     tables:
-      - name: weather_daily_raw  # <--logical name used in the models
+      - name: weather_daily_raw  # <--logical name used in the models DBT references
         identifier: weather_daily_raw # <-- actual physical table queried
 
       - name: weather_hourly_raw
@@ -22,6 +22,25 @@ sources:
       - name: regions
         identifier: regions_2
 
+  - name: northwind_data
+    schema: s_jingwang
+    tables:
+      - name: northwind_customers
+        identifier: northwind_customers
+
+      - name: northwind_orders
+        identifier: northwind_orders
+
+      - name: northwind_order_details
+        identifier: northwind_order_details
+      
+      - name: northwind_products
+        identifier: northwind_products
+      
+      - name: northwind_categories
+        identifier: northwind_categories
+
+
 # This is for documentation purposes, ALWAYS DOCUMENT!
 models:
   - name: stg_weather_daily
@@ -37,3 +56,5 @@ models:
         description: "Average temperature (°C)."
       - name: precipitation_mm
         description: "Precipitation amount in millimeters."
+        
+
